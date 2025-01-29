@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 80%;
+}
+section {
+  width: 100%;
+  min-height: 600px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4%;
+}
+section > div {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: #eaea;
+  transition: 0.3s ease;
+}
+section > div:hover {
+  cursor: pointer;
+  transform: rotate(50deg);
+  box-shadow: 0 0 50px #eaea;
+  filter: blur(20px);
+  margin-left: 20px;
+}

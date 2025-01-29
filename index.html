@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mangekyou Sharingan</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #111;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .sharingan {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, #a00 30%, #400 85%, #000 100%);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.5);
+      animation: pulse 3s infinite;
+    }
+
+    .pattern {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      border-radius: 50%;
+      clip-path: polygon(
+        50% 0%, 60% 35%, 100% 50%, 60% 65%, 50% 100%,
+        40% 65%, 0% 50%, 40% 35%
+      );
+      background-color: red;
+      transform-origin: center;
+    }
+
+    .pattern::before {
+      content: '';
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      background: black;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.5);
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 50px 20px rgba(255, 0, 0, 0.8);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sharingan">
+    <div class="pattern"></div>
+  </div>
+  <audio id="sharingan-sound" src="sharingan_sound.mp3" preload="auto"></audio>
+
+  <script src="main.js">
+    
+  </script>
+</body>
+</html>
